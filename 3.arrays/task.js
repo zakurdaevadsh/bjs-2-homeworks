@@ -1,7 +1,7 @@
 let arr1 = [8, 1, 2];
-let arr2 = [8, 1, 2];
+let arr2 = [8, 1, 2, 7, 8, 9];
 function compareArrays(arr1, arr2) {
-  return arr1.every((item, idx) => arr2[idx] === item)
+  return arr1.length === arr2.length && arr1.every((item, idx) => arr2[idx] === item)
 }
 console.log(compareArrays(arr1, arr2))
 
