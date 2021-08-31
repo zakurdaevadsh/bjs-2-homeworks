@@ -1,10 +1,32 @@
 // Задание 1
-function getArrayParams(arr) {
-  let min,max,sum,avg;
+let numbersArray = [1, 2, 3, 4, 50];
+function getArrayParams(numbersArray){
 
-  // Ваш код
+    let min = Infinity
+    let max = -Infinity
+   
+    let sum = 0
+ 
+    for(let i = 0; i < numbersArray.length; i++){
+        
+        const num = numbersArray[i]
 
-  return { min:min, max:max, avg:avg };
+        if(num < min){
+            min = num
+        }
+        
+        if(num > max){
+            max = num
+        }
+        sum += num
+    }
+    
+    avg = sum / numbersArray.length
+    
+    avg = Number(avg.toFixed(2))
+    return {
+        min, max, avg
+    }
 }
 
 // Задание 2
