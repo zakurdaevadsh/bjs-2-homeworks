@@ -1,6 +1,5 @@
 class PrintEditionItem {
-  constructor(author, name, releaseDate, pagesCount) {
-    this.author = author
+  constructor(name, releaseDate, pagesCount) {
     this.name = name
     this.releaseDate = releaseDate
     this.pagesCount = pagesCount
@@ -39,36 +38,37 @@ console.log(sherlock.state);
 
 
 class Magazine extends PrintEditionItem {
-  constructor(name, releaseDate, pagesCount) {
+  constructor(author,name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount)
     this.type = 'magazine'
   }
 }
 
 class Book extends PrintEditionItem {
-  constructor(name, releaseDate, pagesCount) {
+  constructor(author, name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount)
     this.type = 'book'
+    this.author = author
   }
 }
 
 class NovelBook extends Book {
-  constructor(name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount)
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount)
     this.type = 'novel'
   }
 }
 
 class FantasticBook extends Book {
-  constructor(name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount)
+  constructor(author,name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount)
     this.type = 'fantastic'
   }
 }
 
 class DetectiveBook extends Book {
-  constructor(name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount)
+  constructor(author,name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount)
     this.type = 'detective'
   }
 }
@@ -121,7 +121,7 @@ const library = new Library("Библиотека имени Ленина");
 
 library.addBook(
   new NovelBook(
-    "Сказки", 1919, 138)
+    "Пушкин", "Сказки", 1919, 138)
     );
 library.addBook(
   new DetectiveBook(
