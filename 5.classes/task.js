@@ -38,7 +38,7 @@ console.log(sherlock.state);
 
 
 class Magazine extends PrintEditionItem {
-  constructor(author,name, releaseDate, pagesCount) {
+  constructor(name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount)
     this.type = 'magazine'
   }
@@ -89,8 +89,8 @@ console.log(picknick.state);
 // Задача 2
 
 class Library {
-  constructor() {
-    this.name = "LibraryName"
+  constructor(name) {
+    this.name = name
     this.books = []
   }
   addBook(book) {
@@ -101,7 +101,7 @@ class Library {
   findBookBy(type, value) {
     for (let i = 0; i < this.books.length; i += 1) {
       if (this.books[i][type] === value)
-        return this.books 
+        return this.books[i] 
     }
     return null
   }
@@ -133,6 +133,9 @@ library.addBook(
 );
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
+library.addBook(printItem); 
+      const firstBook = library.findBookBy("releaseDate", 2019); 
+      expect(firstBook.name).toEqual('Типовой школьный журнал');
 
 
 console.log(library.findBookBy("Властелин колец")); 
