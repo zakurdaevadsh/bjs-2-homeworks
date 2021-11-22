@@ -133,11 +133,6 @@ library.addBook(
 );
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
-library.addBook(printItem); 
-      const firstBook = library.findBookBy("releaseDate", 2019); 
-      expect(firstBook.name).toEqual('Типовой школьный журнал');
-
-
 console.log(library.findBookBy("Властелин колец")); 
 console.log(library.findBookBy("releaseDate", 1924)); 
 
